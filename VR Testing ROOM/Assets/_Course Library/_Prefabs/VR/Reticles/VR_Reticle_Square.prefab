@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4293456250089572672}
   - component: {fileID: 881210343408928485}
+  - component: {fileID: 9085163047040625781}
   - component: {fileID: 3161042511625646639}
   m_Layer: 0
-  m_Name: VR_Reticle_2_A
+  m_Name: VR_Reticle_Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,6 +41,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3521457681945940986}
   m_Mesh: {fileID: 7910457063706224700, guid: b277dae6d3c4d774d954c70940701b62, type: 3}
+--- !u!114 &9085163047040625781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521457681945940986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fbe29d3d79dc0439e26b6279a6c70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &3161042511625646639
 MeshRenderer:
   m_ObjectHideFlags: 0
