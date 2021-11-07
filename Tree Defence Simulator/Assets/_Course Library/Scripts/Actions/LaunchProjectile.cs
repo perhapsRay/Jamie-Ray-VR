@@ -14,12 +14,20 @@ public class LaunchProjectile : MonoBehaviour
     [Tooltip("The speed at which the projectile is launched")]
     public float launchSpeed = 1.0f;
 
+    Animator m_animator;
+
+    private void Start()
+    {
+        m_animator = GetComponent<Animator>();
+    }
+
 
     public void Fire()
     {
         GameObject newObject = Instantiate(projectilePrefab, startPoint.position, startPoint.rotation);
         if (newObject.TryGetComponent(out Rigidbody rigidBody))
         {
+            m_animator.SetTrigger("Shoot");
             ApplyForce(rigidBody);
         }
     }
