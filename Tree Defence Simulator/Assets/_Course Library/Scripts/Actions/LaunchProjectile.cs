@@ -6,13 +6,11 @@ using UnityEngine;
 /// </summary>
 public class LaunchProjectile : MonoBehaviour
 {
-
-    [Tooltip("The projectile that's created")]
     public GameObject projectilePrefab = null;
-    [Tooltip("The point that the project is created")]
     public Transform startPoint = null;
-    [Tooltip("The speed at which the projectile is launched")]
     public float launchSpeed = 1.0f;
+    public GameObject muzzleFlashPrefab;
+    private float destroyTimer = 0.1f;
 
     Animator m_animator;
 
@@ -24,10 +22,13 @@ public class LaunchProjectile : MonoBehaviour
 
     public void Fire()
     {
+        GameObject tempFlash;
+        tempFlash = Instantiate(muzzleFlashPrefab, startPoint.position, startPoint.rotation);
+        Destroy(tempFlash, destroyTimer);
+
         GameObject newObject = Instantiate(projectilePrefab, startPoint.position, startPoint.rotation);
         if (newObject.TryGetComponent(out Rigidbody rigidBody))
         {
-            m_animator.SetTrigger("Shoot");
             ApplyForce(rigidBody);
         }
     }
