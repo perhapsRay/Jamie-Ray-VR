@@ -16,10 +16,15 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             health -= 1;
-            if(health <= 0)
+            Score.scoreCounter = Score.scoreCounter + 5;
+            if (health <= 0)
             {
                 Destroy(gameObject);
             }
+        }
+        else if (collision.gameObject.tag == "Tree")
+        {
+            Health.healthCounter = Health.healthCounter - 1;
         }
     }
     void Start()
