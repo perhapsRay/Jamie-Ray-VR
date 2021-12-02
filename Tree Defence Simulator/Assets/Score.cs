@@ -5,16 +5,16 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
 
-    public Text scoreText;  // public if you want to drag your text object in there manually
+    public Text scoreText;
     public static int scoreCounter = 0;
 
     void Start()
     {
-        scoreText = GetComponent<Text>();  // if you want to reference it by code - tag it if you have several texts
+        scoreText = GetComponent<Text>();
     }
 
     void Update()
     {
-        scoreText.text = scoreCounter.ToString();  // make it a string to output to the Text object
+        scoreText.text = scoreCounter.ToString();
     }
 }
